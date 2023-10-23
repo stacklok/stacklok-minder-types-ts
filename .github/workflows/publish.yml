@@ -1,0 +1,42 @@
+---
+name: Publish Node Package
+
+on: 
+  workflow_dispatch:
+
+jobs: 
+  publish-gpr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: npm
+          registry-url: 'https://npm.pkg.github.com/'
+
+      - name: Compute version number
+        id: version-string
+        run: |
+          DATE="$(date +%Y%m%d)"
+          COMMIT="$(git rev-parse --short HEAD)"
+          echo "tag=0.$DATE.$GITHUB_RUN_NUMBER+ref.$COMMIT" >> "$GITHUB_OUTPUT"
+
+      - name: Set version number
+        run: |
+          jq ".version = \"$VERSION\"" package.json > package.json.tmp
+          mv package.json.tmp package.json
+        env:
+          VERSION: ${{ steps.version-string.outputs.tag }}
+
+      - run: npm run build
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

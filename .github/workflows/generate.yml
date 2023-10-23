@@ -1,0 +1,61 @@
+name: Generate clients
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  generate-clients:
+    name: Generate clients
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate mediator clients
+        run: npm run generate
+
+      - name: Check if generated clients changed
+        id: check-openapi
+        run: |
+          if [[ -z $(git status --porcelain generated) ]]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Set Git config
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Generate PR if needed
+        if: steps.check-openapi.outputs.changed == 'true'
+        run: |
+          git checkout -b update-generated-$GITHUB_SHA
+
+          git add generated
+          git commit -m "Update generated clients to version generated from ref $GITHUB_SHA"
+
+          echo "Pushing branch so we can create a PR..."
+          git push --set-upstream origin update-generated-$GITHUB_SHA
+
+          gh pr create --title "Update Generated" \
+            --body "This PR updates the generated clients to the version generated from ref $GITHUB_SHA" \
+            --repo "$GITHUB_REPOSITORY" \
+            --base main \
+            --head update-generated-$GITHUB_SHA
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
