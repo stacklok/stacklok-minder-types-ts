@@ -9,10 +9,7 @@ export type v1CreateUserResponse = {
     organizatioName?: string;
     projectId?: string;
     projectName?: string;
-    email?: string;
     identitySubject?: string;
-    firstName?: string;
-    lastName?: string;
     createdAt?: string;
 };
 

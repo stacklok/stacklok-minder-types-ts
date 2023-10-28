@@ -6,10 +6,7 @@
 export type v1UserRecord = {
     id?: number;
     organizationId?: string;
-    email?: string;
     identitySubject?: string;
-    firstName?: string;
-    lastName?: string;
     createdAt?: string;
     updatedAt?: string;
 };
