@@ -4,7 +4,5 @@
 /* eslint-disable */
 
 export type EvalVulncheck = {
-    db?: string;
-    endpoint?: string;
 };
 
