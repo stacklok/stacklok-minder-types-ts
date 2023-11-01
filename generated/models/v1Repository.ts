@@ -3,11 +3,11 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { mediatorv1Context } from './mediatorv1Context';
+import type { minderv1Context } from './minderv1Context';
 
 export type v1Repository = {
     id?: string;
-    context?: mediatorv1Context;
+    context?: minderv1Context;
     owner?: string;
     name?: string;
     repoId?: number;
