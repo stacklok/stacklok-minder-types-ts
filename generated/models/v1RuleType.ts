@@ -3,7 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { mediatorv1Context } from './mediatorv1Context';
+import type { minderv1Context } from './minderv1Context';
 import type { v1RuleTypeDefinition } from './v1RuleTypeDefinition';
 
 /**
@@ -23,7 +23,7 @@ export type v1RuleType = {
     /**
      * context is the context in which the rule is evaluated.
      */
-    context?: mediatorv1Context;
+    context?: minderv1Context;
     /**
      * def is the definition of the rule type.
      */

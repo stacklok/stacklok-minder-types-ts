@@ -3,7 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type EvalPackageIntelligence = {
+export type EvalTrusty = {
     endpoint?: string;
 };
 

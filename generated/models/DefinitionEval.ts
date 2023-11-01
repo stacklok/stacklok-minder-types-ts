@@ -4,8 +4,8 @@
 /* eslint-disable */
 
 import type { EvalJQComparison } from './EvalJQComparison';
-import type { EvalPackageIntelligence } from './EvalPackageIntelligence';
 import type { EvalRego } from './EvalRego';
+import type { EvalTrusty } from './EvalTrusty';
 import type { EvalVulncheck } from './EvalVulncheck';
 
 /**
@@ -30,8 +30,8 @@ export type DefinitionEval = {
      */
     vulncheck?: EvalVulncheck;
     /**
-     * package_intelligence is only used if the `package_intelligence` type is selected.
+     * trusty is only used if the `trusty` type is selected.
      */
-    packageIntelligence?: EvalPackageIntelligence;
+    trusty?: EvalTrusty;
 };
 

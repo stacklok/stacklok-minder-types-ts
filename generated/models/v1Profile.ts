@@ -3,7 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { mediatorv1Context } from './mediatorv1Context';
+import type { minderv1Context } from './minderv1Context';
 import type { ProfileRule } from './ProfileRule';
 
 /**
@@ -13,7 +13,7 @@ export type v1Profile = {
     /**
      * context is the context in which the profile is evaluated.
      */
-    context?: mediatorv1Context;
+    context?: minderv1Context;
     /**
      * id is the id of the profile.
      * This is optional and is set by the system.
