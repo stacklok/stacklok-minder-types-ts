@@ -1420,9 +1420,9 @@
           "$ref": "#/definitions/EvalVulncheck",
           "description": "vulncheck is only used if the `vulncheck` type is selected."
         },
-        "packageIntelligence": {
-          "$ref": "#/definitions/EvalPackageIntelligence",
-          "description": "package_intelligence is only used if the `package_intelligence` type is selected."
+        "trusty": {
+          "$ref": "#/definitions/EvalTrusty",
+          "description": "trusty is only used if the `trusty` type is selected."
         }
       },
       "description": "Eval defines the data evaluation definition.\nThis pertains to the way we traverse data from the upstream\nendpoint and how we compare it to the rule."
@@ -1500,15 +1500,6 @@
         }
       }
     },
-    "EvalPackageIntelligence": {
-      "type": "object",
-      "properties": {
-        "endpoint": {
-          "type": "string",
-          "title": "e.g. https://staging.stacklok.dev/"
-        }
-      }
-    },
     "EvalRego": {
       "type": "object",
       "properties": {
@@ -1519,6 +1510,15 @@
         "def": {
           "type": "string",
           "description": "def is the definition of the rego profile."
+        }
+      }
+    },
+    "EvalTrusty": {
+      "type": "object",
+      "properties": {
+        "endpoint": {
+          "type": "string",
+          "title": "e.g. https://staging.stacklok.dev/"
         }
       }
     },
@@ -1670,7 +1670,7 @@
         }
       }
     },
-    "mediatorv1Context": {
+    "minderv1Context": {
       "type": "object",
       "properties": {
         "provider": {
@@ -2172,7 +2172,7 @@
       "type": "object",
       "properties": {
         "context": {
-          "$ref": "#/definitions/mediatorv1Context",
+          "$ref": "#/definitions/minderv1Context",
           "description": "context is the context in which the profile is evaluated."
         },
         "id": {
@@ -2314,7 +2314,7 @@
           "title": "This is optional when returning remote repositories"
         },
         "context": {
-          "$ref": "#/definitions/mediatorv1Context"
+          "$ref": "#/definitions/minderv1Context"
         },
         "owner": {
           "type": "string"
@@ -2490,7 +2490,7 @@
           "description": "name is the name of the rule type."
         },
         "context": {
-          "$ref": "#/definitions/mediatorv1Context",
+          "$ref": "#/definitions/minderv1Context",
           "description": "context is the context in which the rule is evaluated."
         },
         "def": {
