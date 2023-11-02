@@ -44,6 +44,8 @@ export type { v1CreateRuleTypeResponse } from './models/v1CreateRuleTypeResponse
 export type { v1CreateUserRequest } from './models/v1CreateUserRequest';
 export type { v1CreateUserResponse } from './models/v1CreateUserResponse';
 export type { v1DeleteProfileResponse } from './models/v1DeleteProfileResponse';
+export type { v1DeleteRepositoryByIdResponse } from './models/v1DeleteRepositoryByIdResponse';
+export type { v1DeleteRepositoryByNameResponse } from './models/v1DeleteRepositoryByNameResponse';
 export type { v1DeleteRuleTypeResponse } from './models/v1DeleteRuleTypeResponse';
 export type { v1DeleteUserResponse } from './models/v1DeleteUserResponse';
 export type { v1DiffType } from './models/v1DiffType';

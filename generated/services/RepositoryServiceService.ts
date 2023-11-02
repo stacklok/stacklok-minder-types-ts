@@ -3,6 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { googlerpcStatus } from '../models/googlerpcStatus';
+import type { v1DeleteRepositoryByIdResponse } from '../models/v1DeleteRepositoryByIdResponse';
+import type { v1DeleteRepositoryByNameResponse } from '../models/v1DeleteRepositoryByNameResponse';
 import type { v1GetRepositoryByIdResponse } from '../models/v1GetRepositoryByIdResponse';
 import type { v1GetRepositoryByNameResponse } from '../models/v1GetRepositoryByNameResponse';
 import type { v1ListRemoteRepositoriesFromProviderResponse } from '../models/v1ListRemoteRepositoriesFromProviderResponse';
@@ -87,6 +89,24 @@ export class RepositoryServiceService {
     }
 
     /**
+     * @param repositoryId
+     * @returns v1DeleteRepositoryByIdResponse A successful response.
+     * @returns googlerpcStatus An unexpected error response.
+     * @throws ApiError
+     */
+    public static repositoryServiceDeleteRepositoryById(
+        repositoryId: string,
+    ): CancelablePromise<v1DeleteRepositoryByIdResponse | googlerpcStatus> {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/api/v1/repository/id/{repositoryId}',
+            path: {
+                'repositoryId': repositoryId,
+            },
+        });
+    }
+
+    /**
      * @param provider
      * @param name
      * @param projectId
@@ -101,6 +121,32 @@ export class RepositoryServiceService {
     ): CancelablePromise<v1GetRepositoryByNameResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
+            url: '/api/v1/repository/provider/{provider}/name/{name}',
+            path: {
+                'provider': provider,
+                'name': name,
+            },
+            query: {
+                'projectId': projectId,
+            },
+        });
+    }
+
+    /**
+     * @param provider
+     * @param name
+     * @param projectId
+     * @returns v1DeleteRepositoryByNameResponse A successful response.
+     * @returns googlerpcStatus An unexpected error response.
+     * @throws ApiError
+     */
+    public static repositoryServiceDeleteRepositoryByName(
+        provider: string,
+        name: string,
+        projectId?: string,
+    ): CancelablePromise<v1DeleteRepositoryByNameResponse | googlerpcStatus> {
+        return __request(OpenAPI, {
+            method: 'DELETE',
             url: '/api/v1/repository/provider/{provider}/name/{name}',
             path: {
                 'provider': provider,
