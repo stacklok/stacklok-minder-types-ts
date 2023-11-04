@@ -169,7 +169,7 @@ export class RepositoryServiceService {
         provider: string,
         body: {
             projectId?: string;
-            repositories?: Array<v1UpstreamRepositoryRef>;
+            repository?: v1UpstreamRepositoryRef;
         },
     ): CancelablePromise<v1RegisterRepositoryResponse | googlerpcStatus> {
         return __request(OpenAPI, {

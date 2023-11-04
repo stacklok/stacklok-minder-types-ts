@@ -6,6 +6,6 @@
 import type { v1RegisterRepoResult } from './v1RegisterRepoResult';
 
 export type v1RegisterRepositoryResponse = {
-    results?: Array<v1RegisterRepoResult>;
+    result?: v1RegisterRepoResult;
 };
 
