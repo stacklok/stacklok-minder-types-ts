@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "mediator/v1/mediator.proto",
+    "title": "minder/v1/minder.proto",
     "version": "version not set"
   },
   "tags": [
@@ -574,6 +574,36 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/v1CreateProfileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ProfileService"
+        ]
+      },
+      "put": {
+        "operationId": "ProfileService_UpdateProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateProfileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1UpdateProfileRequest"
             }
           }
         ],
@@ -2338,9 +2368,6 @@
         "description": {
           "type": "string"
         },
-        "isProtected": {
-          "type": "boolean"
-        },
         "createdAt": {
           "type": "string",
           "format": "date-time"
@@ -2647,6 +2674,22 @@
     },
     "v1StoreProviderTokenResponse": {
       "type": "object"
+    },
+    "v1UpdateProfileRequest": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "$ref": "#/definitions/v1Profile"
+        }
+      }
+    },
+    "v1UpdateProfileResponse": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "$ref": "#/definitions/v1Profile"
+        }
+      }
     },
     "v1UpdateRuleTypeRequest": {
       "type": "object",
