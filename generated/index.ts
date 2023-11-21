@@ -86,6 +86,8 @@ export type { v1RuleType } from './models/v1RuleType';
 export type { v1RuleTypeDefinition } from './models/v1RuleTypeDefinition';
 export type { v1SignatureVerification } from './models/v1SignatureVerification';
 export type { v1StoreProviderTokenResponse } from './models/v1StoreProviderTokenResponse';
+export type { v1UpdateProfileRequest } from './models/v1UpdateProfileRequest';
+export type { v1UpdateProfileResponse } from './models/v1UpdateProfileResponse';
 export type { v1UpdateRuleTypeRequest } from './models/v1UpdateRuleTypeRequest';
 export type { v1UpdateRuleTypeResponse } from './models/v1UpdateRuleTypeResponse';
 export type { v1UpstreamRepositoryRef } from './models/v1UpstreamRepositoryRef';
