@@ -7,7 +7,6 @@ export type v1Project = {
     projectId?: string;
     name?: string;
     description?: string;
-    isProtected?: boolean;
     createdAt?: string;
     updatedAt?: string;
 };

@@ -16,6 +16,8 @@ import type { v1GetRuleTypeByIdResponse } from '../models/v1GetRuleTypeByIdRespo
 import type { v1GetRuleTypeByNameResponse } from '../models/v1GetRuleTypeByNameResponse';
 import type { v1ListProfilesResponse } from '../models/v1ListProfilesResponse';
 import type { v1ListRuleTypesResponse } from '../models/v1ListRuleTypesResponse';
+import type { v1UpdateProfileRequest } from '../models/v1UpdateProfileRequest';
+import type { v1UpdateProfileResponse } from '../models/v1UpdateProfileResponse';
 import type { v1UpdateRuleTypeRequest } from '../models/v1UpdateRuleTypeRequest';
 import type { v1UpdateRuleTypeResponse } from '../models/v1UpdateRuleTypeResponse';
 
@@ -36,6 +38,22 @@ export class ProfileServiceService {
     ): CancelablePromise<v1CreateProfileResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'POST',
+            url: '/api/v1/profile',
+            body: body,
+        });
+    }
+
+    /**
+     * @param body
+     * @returns v1UpdateProfileResponse A successful response.
+     * @returns googlerpcStatus An unexpected error response.
+     * @throws ApiError
+     */
+    public static profileServiceUpdateProfile(
+        body: v1UpdateProfileRequest,
+    ): CancelablePromise<v1UpdateProfileResponse | googlerpcStatus> {
+        return __request(OpenAPI, {
+            method: 'PUT',
             url: '/api/v1/profile',
             body: body,
         });
