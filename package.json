@@ -1,5 +1,5 @@
 {
-  "name": "@stacklok/stacklok-mediator-types-ts",
+  "name": "@stacklok/stacklok-minder-types-ts",
   "version": "0.0.1",
   "author": "StackLok Inc.",
   "types": "./generated/index.ts",
@@ -9,7 +9,7 @@
     "build": "tsc --build"
   },
   "repository": {
-    "url": "git://github.com/stacklok/stacklok-mediator-types-ts.git"
+    "url": "git://github.com/stacklok/stacklok-minder-types-ts.git"
   },
   "devDependencies": {
     "openapi-typescript-codegen": "^0.25.0",

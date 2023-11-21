@@ -1,4 +1,4 @@
-# Stacklok Mediator typescript clients
+# Stacklok Minder typescript clients
 
 These are auto-generated clients for the [Stacklok](https://stacklok.com) APIs.
 They are generated from the [OpenAPI](https://swagger.io/specification/) specification.
