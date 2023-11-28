@@ -21,5 +21,12 @@ export type EvalRego = {
      * def is the definition of the rego profile.
      */
     def?: string;
+    /**
+     * how are violations reported. This is only used if the
+     * `constraints` type is selected. The default is `text`
+     * which returns human-readable text. The other option is
+     * `json` which returns a JSON array containing the violations.
+     */
+    violationFormat?: string;
 };
 
