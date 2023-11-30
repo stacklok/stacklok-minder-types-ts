@@ -34,8 +34,6 @@ export type { v1ArtifactType } from './models/v1ArtifactType';
 export type { v1ArtifactVersion } from './models/v1ArtifactVersion';
 export type { v1BuiltinType } from './models/v1BuiltinType';
 export type { v1CheckHealthResponse } from './models/v1CheckHealthResponse';
-export type { v1CreateKeyPairRequest } from './models/v1CreateKeyPairRequest';
-export type { v1CreateKeyPairResponse } from './models/v1CreateKeyPairResponse';
 export type { v1CreateProfileRequest } from './models/v1CreateProfileRequest';
 export type { v1CreateProfileResponse } from './models/v1CreateProfileResponse';
 export type { v1CreateRuleTypeRequest } from './models/v1CreateRuleTypeRequest';
@@ -55,7 +53,6 @@ export type { v1GetAuthorizationURLResponse } from './models/v1GetAuthorizationU
 export type { v1GetProfileByIdResponse } from './models/v1GetProfileByIdResponse';
 export type { v1GetProfileStatusByNameResponse } from './models/v1GetProfileStatusByNameResponse';
 export type { v1GetProfileStatusByProjectResponse } from './models/v1GetProfileStatusByProjectResponse';
-export type { v1GetPublicKeyResponse } from './models/v1GetPublicKeyResponse';
 export type { v1GetRepositoryByIdResponse } from './models/v1GetRepositoryByIdResponse';
 export type { v1GetRepositoryByNameResponse } from './models/v1GetRepositoryByNameResponse';
 export type { v1GetRuleTypeByIdResponse } from './models/v1GetRuleTypeByIdResponse';
@@ -76,9 +73,6 @@ export type { v1RegisterRepoResultStatus } from './models/v1RegisterRepoResultSt
 export type { v1RegisterRepositoryResponse } from './models/v1RegisterRepositoryResponse';
 export type { v1Repository } from './models/v1Repository';
 export type { v1RestType } from './models/v1RestType';
-export type { v1RevokeOauthProjectTokenResponse } from './models/v1RevokeOauthProjectTokenResponse';
-export type { v1RevokeOauthTokensRequest } from './models/v1RevokeOauthTokensRequest';
-export type { v1RevokeOauthTokensResponse } from './models/v1RevokeOauthTokensResponse';
 export type { v1RuleEvaluationStatus } from './models/v1RuleEvaluationStatus';
 export type { v1RuleType } from './models/v1RuleType';
 export type { v1RuleTypeDefinition } from './models/v1RuleTypeDefinition';
@@ -94,7 +88,6 @@ export type { v1VerifyProviderTokenFromResponse } from './models/v1VerifyProvide
 
 export { ArtifactServiceService } from './services/ArtifactServiceService';
 export { HealthServiceService } from './services/HealthServiceService';
-export { KeyServiceService } from './services/KeyServiceService';
 export { OAuthServiceService } from './services/OAuthServiceService';
 export { ProfileServiceService } from './services/ProfileServiceService';
 export { RepositoryServiceService } from './services/RepositoryServiceService';
