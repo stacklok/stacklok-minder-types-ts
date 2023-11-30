@@ -6,9 +6,6 @@ import type { apiHttpBody } from '../models/apiHttpBody';
 import type { googlerpcStatus } from '../models/googlerpcStatus';
 import type { v1ExchangeCodeForTokenWEBResponse } from '../models/v1ExchangeCodeForTokenWEBResponse';
 import type { v1GetAuthorizationURLResponse } from '../models/v1GetAuthorizationURLResponse';
-import type { v1RevokeOauthProjectTokenResponse } from '../models/v1RevokeOauthProjectTokenResponse';
-import type { v1RevokeOauthTokensRequest } from '../models/v1RevokeOauthTokensRequest';
-import type { v1RevokeOauthTokensResponse } from '../models/v1RevokeOauthTokensResponse';
 import type { v1StoreProviderTokenResponse } from '../models/v1StoreProviderTokenResponse';
 import type { v1VerifyProviderTokenFromResponse } from '../models/v1VerifyProviderTokenFromResponse';
 
@@ -82,24 +79,6 @@ export class OAuthServiceService {
     }
 
     /**
-     * RevokeOauthTokens is used to revoke all tokens
-     * this a nuclear option and should only be used in emergencies
-     * @param body
-     * @returns v1RevokeOauthTokensResponse A successful response.
-     * @returns googlerpcStatus An unexpected error response.
-     * @throws ApiError
-     */
-    public static oAuthServiceRevokeOauthTokens(
-        body: v1RevokeOauthTokensRequest,
-    ): CancelablePromise<v1RevokeOauthTokensResponse | googlerpcStatus> {
-        return __request(OpenAPI, {
-            method: 'POST',
-            url: '/api/v1/auth/revoke-all',
-            body: body,
-        });
-    }
-
-    /**
      * @param provider
      * @param projectId
      * @param cli
@@ -153,31 +132,6 @@ export class OAuthServiceService {
             query: {
                 'projectId': projectId,
             },
-        });
-    }
-
-    /**
-     * revoke token for a project
-     * @param provider
-     * @param projectId
-     * @param body
-     * @returns v1RevokeOauthProjectTokenResponse A successful response.
-     * @returns googlerpcStatus An unexpected error response.
-     * @throws ApiError
-     */
-    public static oAuthServiceRevokeOauthProjectToken(
-        provider: string,
-        projectId: string,
-        body: any,
-    ): CancelablePromise<v1RevokeOauthProjectTokenResponse | googlerpcStatus> {
-        return __request(OpenAPI, {
-            method: 'POST',
-            url: '/api/v1/auth/{provider}/revoke/{projectId}',
-            path: {
-                'provider': provider,
-                'projectId': projectId,
-            },
-            body: body,
         });
     }
 
