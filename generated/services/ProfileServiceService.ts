@@ -62,8 +62,8 @@ export class ProfileServiceService {
     /**
      * @param name name is the name of the profile to get
      * @param contextProvider
-     * @param contextOrganization
      * @param contextProject
+     * @param contextRetiredOrganization
      * @param entityType entity is the entity to get status for. Incompatible with `all`
      * @param entityId id is the ID of the entity to get status for. Incompatible with `all`
      * @param all
@@ -75,8 +75,8 @@ export class ProfileServiceService {
     public static profileServiceGetProfileStatusByName(
         name: string,
         contextProvider?: string,
-        contextOrganization?: string,
         contextProject?: string,
+        contextRetiredOrganization?: string,
         entityType: 'ENTITY_UNSPECIFIED' | 'ENTITY_REPOSITORIES' | 'ENTITY_BUILD_ENVIRONMENTS' | 'ENTITY_ARTIFACTS' | 'ENTITY_PULL_REQUESTS' = 'ENTITY_UNSPECIFIED',
         entityId?: string,
         all?: boolean,
@@ -90,8 +90,8 @@ export class ProfileServiceService {
             },
             query: {
                 'context.provider': contextProvider,
-                'context.organization': contextOrganization,
                 'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
                 'entity.type': entityType,
                 'entity.id': entityId,
                 'all': all,
@@ -103,8 +103,8 @@ export class ProfileServiceService {
     /**
      * @param id id is the id of the profile to get
      * @param contextProvider
-     * @param contextOrganization
      * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1GetProfileByIdResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -112,8 +112,8 @@ export class ProfileServiceService {
     public static profileServiceGetProfileById(
         id: string,
         contextProvider?: string,
-        contextOrganization?: string,
         contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1GetProfileByIdResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -123,8 +123,8 @@ export class ProfileServiceService {
             },
             query: {
                 'context.provider': contextProvider,
-                'context.organization': contextOrganization,
                 'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
@@ -132,8 +132,8 @@ export class ProfileServiceService {
     /**
      * @param id id is the id of the profile to delete
      * @param contextProvider
-     * @param contextOrganization
      * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1DeleteProfileResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -141,8 +141,8 @@ export class ProfileServiceService {
     public static profileServiceDeleteProfile(
         id: string,
         contextProvider?: string,
-        contextOrganization?: string,
         contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1DeleteProfileResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'DELETE',
@@ -152,56 +152,56 @@ export class ProfileServiceService {
             },
             query: {
                 'context.provider': contextProvider,
-                'context.organization': contextOrganization,
                 'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
 
     /**
      * @param contextProvider
-     * @param contextOrganization
      * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1GetProfileStatusByProjectResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
      */
     public static profileServiceGetProfileStatusByProject(
         contextProvider?: string,
-        contextOrganization?: string,
         contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1GetProfileStatusByProjectResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/profile_status',
             query: {
                 'context.provider': contextProvider,
-                'context.organization': contextOrganization,
                 'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
 
     /**
      * @param contextProvider
-     * @param contextOrganization
      * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1ListProfilesResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
      */
     public static profileServiceListProfiles(
         contextProvider?: string,
-        contextOrganization?: string,
         contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1ListProfilesResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/profiles',
             query: {
                 'context.provider': contextProvider,
-                'context.organization': contextOrganization,
                 'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
@@ -241,8 +241,8 @@ export class ProfileServiceService {
     /**
      * @param name name is the name of the rule type.
      * @param contextProvider
-     * @param contextOrganization
      * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1GetRuleTypeByNameResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -250,8 +250,8 @@ export class ProfileServiceService {
     public static profileServiceGetRuleTypeByName(
         name: string,
         contextProvider?: string,
-        contextOrganization?: string,
         contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1GetRuleTypeByNameResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -261,8 +261,8 @@ export class ProfileServiceService {
             },
             query: {
                 'context.provider': contextProvider,
-                'context.organization': contextOrganization,
                 'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
@@ -270,8 +270,8 @@ export class ProfileServiceService {
     /**
      * @param id id is the id of the rule type.
      * @param contextProvider
-     * @param contextOrganization
      * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1GetRuleTypeByIdResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -279,8 +279,8 @@ export class ProfileServiceService {
     public static profileServiceGetRuleTypeById(
         id: string,
         contextProvider?: string,
-        contextOrganization?: string,
         contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1GetRuleTypeByIdResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -290,8 +290,8 @@ export class ProfileServiceService {
             },
             query: {
                 'context.provider': contextProvider,
-                'context.organization': contextOrganization,
                 'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
@@ -299,8 +299,8 @@ export class ProfileServiceService {
     /**
      * @param id id is the id of the rule type to be deleted.
      * @param contextProvider
-     * @param contextOrganization
      * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1DeleteRuleTypeResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -308,8 +308,8 @@ export class ProfileServiceService {
     public static profileServiceDeleteRuleType(
         id: string,
         contextProvider?: string,
-        contextOrganization?: string,
         contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1DeleteRuleTypeResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'DELETE',
@@ -319,32 +319,32 @@ export class ProfileServiceService {
             },
             query: {
                 'context.provider': contextProvider,
-                'context.organization': contextOrganization,
                 'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
 
     /**
      * @param contextProvider
-     * @param contextOrganization
      * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1ListRuleTypesResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
      */
     public static profileServiceListRuleTypes(
         contextProvider?: string,
-        contextOrganization?: string,
         contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1ListRuleTypesResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/rule_types',
             query: {
                 'context.provider': contextProvider,
-                'context.organization': contextOrganization,
                 'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }

@@ -7,9 +7,9 @@
  * Context defines the context in which a rule is evaluated.
  * this normally refers to a combination of the provider, organization and project.
  */
-export type minderv1Context = {
+export type v1Context = {
     provider?: string;
-    organization?: string;
     project?: string;
+    retiredOrganization?: string;
 };
 
