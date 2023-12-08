@@ -3,8 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { minderv1Context } from './minderv1Context';
 import type { ProfileRule } from './ProfileRule';
+import type { v1Context } from './v1Context';
 
 /**
  * Profile defines a profile that is user defined.
@@ -13,7 +13,7 @@ export type v1Profile = {
     /**
      * context is the context in which the profile is evaluated.
      */
-    context?: minderv1Context;
+    context?: v1Context;
     /**
      * id is the id of the profile.
      * This is optional and is set by the system.

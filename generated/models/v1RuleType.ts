@@ -3,7 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { minderv1Context } from './minderv1Context';
+import type { v1Context } from './v1Context';
 import type { v1RuleTypeDefinition } from './v1RuleTypeDefinition';
 
 /**
@@ -23,7 +23,7 @@ export type v1RuleType = {
     /**
      * context is the context in which the rule is evaluated.
      */
-    context?: minderv1Context;
+    context?: v1Context;
     /**
      * def is the definition of the rule type.
      */
