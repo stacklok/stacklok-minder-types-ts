@@ -28,6 +28,7 @@ export type { PullRequestRemediationContent } from './models/PullRequestRemediat
 export type { RemediateGhBranchProtectionType } from './models/RemediateGhBranchProtectionType';
 export type { RemediatePullRequestRemediation } from './models/RemediatePullRequestRemediation';
 export type { RestTypeFallback } from './models/RestTypeFallback';
+export type { RuleTypeDefinition } from './models/RuleTypeDefinition';
 export type { v1Artifact } from './models/v1Artifact';
 export type { v1ArtifactType } from './models/v1ArtifactType';
 export type { v1ArtifactVersion } from './models/v1ArtifactVersion';
@@ -75,7 +76,6 @@ export type { v1Repository } from './models/v1Repository';
 export type { v1RestType } from './models/v1RestType';
 export type { v1RuleEvaluationStatus } from './models/v1RuleEvaluationStatus';
 export type { v1RuleType } from './models/v1RuleType';
-export type { v1RuleTypeDefinition } from './models/v1RuleTypeDefinition';
 export type { v1SignatureVerification } from './models/v1SignatureVerification';
 export type { v1StoreProviderTokenResponse } from './models/v1StoreProviderTokenResponse';
 export type { v1UpdateProfileRequest } from './models/v1UpdateProfileRequest';

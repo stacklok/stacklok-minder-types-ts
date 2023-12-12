@@ -63,7 +63,7 @@
                      * name "y.z".
                      *
                      * JSON
-                     *
+                     * ====
                      * The JSON representation of an `Any` value uses the regular
                      * representation of the deserialized, embedded message, with an
                      * additional field `@type` which contains the type URL. Example:

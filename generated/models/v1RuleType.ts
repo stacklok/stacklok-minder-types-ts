@@ -3,8 +3,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
+import type { RuleTypeDefinition } from './RuleTypeDefinition';
 import type { v1Context } from './v1Context';
-import type { v1RuleTypeDefinition } from './v1RuleTypeDefinition';
 
 /**
  * RuleType defines rules that may or may not be user defined.
@@ -27,7 +27,7 @@ export type v1RuleType = {
     /**
      * def is the definition of the rule type.
      */
-    def?: v1RuleTypeDefinition;
+    def?: RuleTypeDefinition;
     /**
      * description is the description of the rule type.
      */

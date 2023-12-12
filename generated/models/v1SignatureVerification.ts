@@ -10,7 +10,7 @@ export type v1SignatureVerification = {
     certIdentity?: string;
     certIssuer?: string;
     rekorLogId?: string;
-    rekorLogIndex?: number;
+    rekorLogIndex?: string;
     signatureTime?: string;
 };
 
