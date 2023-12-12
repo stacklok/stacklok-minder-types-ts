@@ -11,7 +11,7 @@ import type { DefinitionRemediate } from './DefinitionRemediate';
 /**
  * Definition defines the rule type. It encompases the schema and the data evaluation.
  */
-export type v1RuleTypeDefinition = {
+export type RuleTypeDefinition = {
     /**
      * in_entity is the entity in which the rule is evaluated.
      * This can be repository, build_environment or artifact.
