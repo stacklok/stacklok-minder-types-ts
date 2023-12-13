@@ -16,6 +16,9 @@ export class ArtifactServiceService {
      * @param id
      * @param latestVersions
      * @param tag
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1GetArtifactByIdResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -24,6 +27,9 @@ export class ArtifactServiceService {
         id: string,
         latestVersions?: number,
         tag?: string,
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1GetArtifactByIdResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -34,6 +40,9 @@ export class ArtifactServiceService {
             query: {
                 'latestVersions': latestVersions,
                 'tag': tag,
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
@@ -41,6 +50,9 @@ export class ArtifactServiceService {
     /**
      * @param provider
      * @param projectId
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1ListArtifactsResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -48,6 +60,9 @@ export class ArtifactServiceService {
     public static artifactServiceListArtifacts(
         provider: string,
         projectId?: string,
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1ListArtifactsResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -57,6 +72,9 @@ export class ArtifactServiceService {
             },
             query: {
                 'projectId': projectId,
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }

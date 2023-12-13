@@ -3,6 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
+import type { v1Context } from './v1Context';
 import type { v1RuleType } from './v1RuleType';
 
 /**
@@ -13,5 +14,6 @@ export type v1UpdateRuleTypeRequest = {
      * rule_type is the rule type to be updated.
      */
     ruleType?: v1RuleType;
+    context?: v1Context;
 };
 

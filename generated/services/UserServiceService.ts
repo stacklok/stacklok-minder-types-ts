@@ -15,26 +15,50 @@ import { request as __request } from '../core/request';
 export class UserServiceService {
 
     /**
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1GetUserResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
      */
-    public static userServiceGetUser(): CancelablePromise<v1GetUserResponse | googlerpcStatus> {
+    public static userServiceGetUser(
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
+    ): CancelablePromise<v1GetUserResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/api/v1/user',
+            query: {
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
+            },
         });
     }
 
     /**
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1DeleteUserResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
      */
-    public static userServiceDeleteUser(): CancelablePromise<v1DeleteUserResponse | googlerpcStatus> {
+    public static userServiceDeleteUser(
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
+    ): CancelablePromise<v1DeleteUserResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/user',
+            query: {
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
+            },
         });
     }
 

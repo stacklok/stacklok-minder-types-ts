@@ -9,5 +9,6 @@ export type RemediatePullRequestRemediation = {
     title?: string;
     body?: string;
     contents?: Array<PullRequestRemediationContent>;
+    method?: string;
 };
 
