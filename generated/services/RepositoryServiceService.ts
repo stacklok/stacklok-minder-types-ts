@@ -3,6 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { googlerpcStatus } from '../models/googlerpcStatus';
+import type { v1Context } from '../models/v1Context';
 import type { v1DeleteRepositoryByIdResponse } from '../models/v1DeleteRepositoryByIdResponse';
 import type { v1DeleteRepositoryByNameResponse } from '../models/v1DeleteRepositoryByNameResponse';
 import type { v1GetRepositoryByIdResponse } from '../models/v1GetRepositoryByIdResponse';
@@ -23,6 +24,9 @@ export class RepositoryServiceService {
      * @param projectId
      * @param limit
      * @param offset
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1ListRepositoriesResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -32,6 +36,9 @@ export class RepositoryServiceService {
         projectId?: string,
         limit?: number,
         offset?: number,
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1ListRepositoriesResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -43,6 +50,9 @@ export class RepositoryServiceService {
                 'projectId': projectId,
                 'limit': limit,
                 'offset': offset,
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
@@ -50,6 +60,9 @@ export class RepositoryServiceService {
     /**
      * @param provider
      * @param projectId
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1ListRemoteRepositoriesFromProviderResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -57,6 +70,9 @@ export class RepositoryServiceService {
     public static repositoryServiceListRemoteRepositoriesFromProvider(
         provider: string,
         projectId?: string,
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1ListRemoteRepositoriesFromProviderResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -66,18 +82,27 @@ export class RepositoryServiceService {
             },
             query: {
                 'projectId': projectId,
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
 
     /**
      * @param repositoryId
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1GetRepositoryByIdResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
      */
     public static repositoryServiceGetRepositoryById(
         repositoryId: string,
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1GetRepositoryByIdResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -85,23 +110,39 @@ export class RepositoryServiceService {
             path: {
                 'repositoryId': repositoryId,
             },
+            query: {
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
+            },
         });
     }
 
     /**
      * @param repositoryId
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1DeleteRepositoryByIdResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
      */
     public static repositoryServiceDeleteRepositoryById(
         repositoryId: string,
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1DeleteRepositoryByIdResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/api/v1/repository/id/{repositoryId}',
             path: {
                 'repositoryId': repositoryId,
+            },
+            query: {
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
@@ -110,6 +151,9 @@ export class RepositoryServiceService {
      * @param provider
      * @param name
      * @param projectId
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1GetRepositoryByNameResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -118,6 +162,9 @@ export class RepositoryServiceService {
         provider: string,
         name: string,
         projectId?: string,
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1GetRepositoryByNameResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'GET',
@@ -128,6 +175,9 @@ export class RepositoryServiceService {
             },
             query: {
                 'projectId': projectId,
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
@@ -136,6 +186,9 @@ export class RepositoryServiceService {
      * @param provider
      * @param name
      * @param projectId
+     * @param contextProvider
+     * @param contextProject
+     * @param contextRetiredOrganization
      * @returns v1DeleteRepositoryByNameResponse A successful response.
      * @returns googlerpcStatus An unexpected error response.
      * @throws ApiError
@@ -144,6 +197,9 @@ export class RepositoryServiceService {
         provider: string,
         name: string,
         projectId?: string,
+        contextProvider?: string,
+        contextProject?: string,
+        contextRetiredOrganization?: string,
     ): CancelablePromise<v1DeleteRepositoryByNameResponse | googlerpcStatus> {
         return __request(OpenAPI, {
             method: 'DELETE',
@@ -154,6 +210,9 @@ export class RepositoryServiceService {
             },
             query: {
                 'projectId': projectId,
+                'context.provider': contextProvider,
+                'context.project': contextProject,
+                'context.retiredOrganization': contextRetiredOrganization,
             },
         });
     }
@@ -170,6 +229,7 @@ export class RepositoryServiceService {
         body: {
             projectId?: string;
             repository?: v1UpstreamRepositoryRef;
+            context?: v1Context;
         },
     ): CancelablePromise<v1RegisterRepositoryResponse | googlerpcStatus> {
         return __request(OpenAPI, {
